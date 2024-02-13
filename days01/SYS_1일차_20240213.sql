@@ -49,5 +49,38 @@ WHERE grantee = 'CONNECT';
 SELECT * 
 FROM tabs;
 
+-- db 계정의 모든 테이블을 볼라면 db관리자 계정이어야 한다.
+SELECT *
+FROM dba_tables;
+-- COUNT() 오라클 함수
+-- SELECT COUNT(*)
+SELECT *
+FROM dictionary;
+
+-- SYS --
+DROP USER madang CASCADE;
+CREATE USER madang IDENTIFIED BY madang DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp PROFILE DEFAULT;
+GRANT CONNECT, RESOURCE TO madang;
+GRANT CREATE VIEW, CREATE SYNONYM TO madang;
+GRANT UNLIMITED TABLESPACE TO madang;
+ALTER USER madang ACCOUNT UNLOCK;
+
+SELECT *
+FROM all_users
+ORDER BY username DESC;
+
+-- DB 계정 확인 --
+-- 1) HR 계정의 비밀번호를 lion으로 수정하고
+-- 2) + 새 접속을 클릭 - HR 접속
+-- 3) HR 계정이 소유하고 있는 테이블 목록을 조회
+SELECT *
+FROM all_tables
+ORDER BY OWNER ASC;
+
+PASSWORD HR;
+
+
+
+
 
 

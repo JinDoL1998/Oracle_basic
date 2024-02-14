@@ -8,20 +8,20 @@ SELECT  *
 FROM    all_users; -- Ctrl + Enter, F5
 
 -- 수업중에 사용할 계정 생성, 수정, 삭제 -- 
--- 1) scorr 계정 생성, 수정, 삭제
---   (1) scorr 계정 유무 확인
+-- 1) scott 계정 생성, 수정, 삭제
+--   (1) scott 계정 유무 확인
 SELECT  * 
 FROM    all_users;
 
--- (2) scorr 계정 생성
+-- (2) scott 계정 생성
 CREATE USER scott 
 IDENTIFIED BY tiger;
 
--- (3) scorr 계정 비밀번호 1234 수정
+-- (3) scott 계정 비밀번호 1234 수정
 ALTER USER scott IDENTIFIED BY tiger;
 
--- (4) scorr 계정 삭제
-DROP USER scorr CASCADE;
+-- (4) scott 계정 삭제
+DROP USER scott CASCADE;
 
 -- (5) SYS 최고관리자 계정이 CREATE SESSION 데이터베이스 접속(연결) 시스템 권한을 SCOTT 계정부여.
 GRANT CREATE SESSION TO SCOTT;
@@ -78,6 +78,7 @@ FROM all_tables
 ORDER BY OWNER ASC;
 
 PASSWORD HR;
+ALTER USER HR ACCOUNT UNLOCK;
 
 
 

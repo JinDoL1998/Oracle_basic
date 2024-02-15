@@ -330,9 +330,8 @@ BETWEEN 2000 AND 4000
 -- ORDER BY pay DESC;
 ORDER BY pay ASC;
 
-SELECT empno, ename, job, mgr, hiredate, sal, comm, deptno
-,sal + NVL(comm, 0) AS pay
-FROM emp
+SELECT e.*, NVL(comm, 0) AS pay
+FROM emp e
 WHERE sal + NVL(comm, 0) 
 BETWEEN 2000 AND 4000
 ORDER BY pay ASC;

@@ -1,0 +1,6 @@
+SELECT *
+FROM employees;
+
+SELECT *
+FROM V$RESERVED_WORDS
+WHERE keyword LIKE 'DA%';

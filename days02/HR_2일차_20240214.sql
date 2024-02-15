@@ -67,10 +67,6 @@ DESC EMPLOYEES;
 
 
 
-SELECT *
-FROM emp;
-
-
 
 
 

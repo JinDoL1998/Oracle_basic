@@ -500,4 +500,6 @@ SELECT TO_CHAR(-100, '999PR')
 , TO_CHAR(100, 'S999')
 FROM dual;
 
+SELECT * FROM emp;
+
 

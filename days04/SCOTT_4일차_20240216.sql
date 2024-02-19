@@ -62,7 +62,7 @@ SELECT name, ibsadate
 ,TO_CHAR(ibsadate, 'YYYY')
 FROM insa
 --WHERE TO_CHAR(ibsadate,'YYYY') >= 2000;
-WHERE ibsadate >= '2000.01.01';
+--WHERE ibsadate >= '2000.01.01';
 WHERE EXTRACT(YEAR FROM ibsadate) >= 2000;
 
 -- dual Ό³Έν

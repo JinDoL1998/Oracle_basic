@@ -191,5 +191,6 @@ SELECT deptno, empno, ename, pay
 ,pay * (1+DECODE(deptno, 10, 0.15, 20, 0.1, 30, 0.05)) rate
 FROM(
     SELECT deptno, empno, ename, sal+NVL(comm,0) pay
+    
     FROM emp
 );

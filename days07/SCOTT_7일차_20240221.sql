@@ -428,10 +428,10 @@ FROM emp;
 -- 1) 만나이 = 올해년도 - 생일년도 (생일 안지났으면 -1)
 --      ㄱ. 생일 지났는 여부
 --      ㄴ. 981223-1XXXXXX
-SELECT name, birth_year, current_year, s
+SELECT name, ssn, birth_year, current_year, s
 , current_year - birth_year + DECODE(s, 1, -1, -1, 0, 0, -1) || '세' "만 나이"
 FROM(
-SELECT name
+SELECT ssn, name
 ,CASE
     WHEN gender IN (1,2) THEN '19' || year
     WHEN gender IN (3,4) THEN '20' || year
@@ -447,6 +447,24 @@ END birth_year
     FROM insa
 )
 );
+
+-- [2]
+SELECT t.name, t.ssn
+, 올해년도-생일년도 + CASE S 
+                        WHEN 1 THEN -1
+                        ELSE 0
+                    END 만나이
+FROM(
+    SELECT name, ssn
+    ,TO_CHAR(SYSDATE, 'YYYY') 올해년도
+    ,CASE
+        WHEN SUBSTR(ssn,8,1) IN (1,2,5,6) THEN 1900
+        WHEN SUBSTR(ssn,8,1) IN (3,4,7,8) THEN 2000
+        ELSE 1800
+    END + SUBSTR(ssn,1,2) 생일년도
+    , SIGN(TO_DATE(SUBSTR(ssn,3,4), 'MMDD')-TRUNC(SYSDATE)) s -- 생일전, 오늘생일, 생일후
+    FROM insa
+    ) t;
 
 SELECT 
 TO_CHAR(SYSDATE,'MMDD') 

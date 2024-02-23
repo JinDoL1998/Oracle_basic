@@ -534,9 +534,7 @@ VARCHAR2 == VARCHAR2(1) == VARCHAR2(1 BYTE) 4000byte
 
 -- N+VAR+CHAR2(size)
 NVARCHAR2 == NVARCHAR2(1) = 'วั' 'a'
-
-
-
+4000 byte
 
 
 

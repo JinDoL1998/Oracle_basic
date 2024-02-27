@@ -22,4 +22,5 @@ ORDER BY CASE
             WHEN TO_CHAR( dates, 'D' ) < TO_CHAR( TO_DATE( :yyyymm,'YYYYMM' ), 'D' ) THEN TO_CHAR( dates, 'W' ) + 1
             ELSE TO_NUMBER( TO_CHAR( dates, 'W' ) )
         END;
+        
 

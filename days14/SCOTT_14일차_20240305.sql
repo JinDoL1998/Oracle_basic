@@ -399,7 +399,6 @@ BEGIN
 END;
 
 -- ¤¤.
--- ¤¤.
 CREATE OR REPLACE PROCEDURE up_updtbldept
 (
     pdeptno  tbl_dept.deptno%TYPE

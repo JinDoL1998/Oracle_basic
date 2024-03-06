@@ -1,0 +1,6 @@
+-- SYS
+
+GRANT CREATE VIEW TO scott;
+
+-- 트리거 생성
+GRANT CREATE TRIGGER TO scott;
